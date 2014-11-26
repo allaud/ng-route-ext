@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ng-route-ext by allaud</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ng-route-ext</h1>
+        <p>Extended version of AngularJS ngRoute module that supports namings and different animations between views</p>
+        <p class="view"><a href="https://github.com/allaud/ng-route-ext">View the Project on GitHub <small>allaud/ng-route-ext</small></a></p>
+        <ul>
+          <li><a href="https://github.com/allaud/ng-route-ext/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/allaud/ng-route-ext/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/allaud/ng-route-ext">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="angularjs-module-for-simple-routing-with-animations-support" class="anchor" href="#angularjs-module-for-simple-routing-with-animations-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>AngularJS module for simple routing with animations support</h1>
+
+<h2>
+<a id="the-problem" class="anchor" href="#the-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>The problem</h2>
+
+<p>One of the worst pains of the original ngRoute module is weak animations support. It only supports one type of animation for all views changes. The main idea of this module is to provide support for different animations for different views (e.g. next and previous pages animated with left and right transitions, or flip left/right between some kind of pages).</p>
+
+<h2>
+<a id="solution" class="anchor" href="#solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution</h2>
+
+<p>The module provides small extention of Angular's DSL for describing routes. So that you can use different animations for different views.</p>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<pre><code>$routeProvider
+  .when('/',
+    templateUrl: 'index.html'
+    controller: 'IndexController'
+    name: 'index'
+    animations:
+      pictures: ['slide-to-top', 'slide-from-bottom']
+  )
+  .when('/pictures',
+    templateUrl: 'pictures.html'
+    controller: 'PicturesController'
+    name: 'pictures'
+    animations:
+      index: ['slide-from-bottom', 'slide-to-top']
+  )
+</code></pre>
+
+<h2>
+<a id="how-it-reads" class="anchor" href="#how-it-reads" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it reads</h2>
+
+<p>First, notice two new fields: name and animations. <code>animations</code> is a hash which reads as follows:</p>
+
+<pre><code>    name: 'pictures'
+    animations:
+      index: ['slide-from-bottom', 'slide-to-top']
+</code></pre>
+
+<p><code>when moving to "pictures" page from "index" page use "slide-from-bottom" animation for index and "slide-to-top" animation for pictures page</code></p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/allaud">allaud</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
