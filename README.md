@@ -25,3 +25,7 @@ The module provides small extention of Angular's DSL for describing routes. So t
         animations:
           form: ['slide-from-bottom', 'slide-to-top']
       )
+
+## Demo
+
+Please check out the [demo here](http://allaud.github.io/ng-route-ext/example/)
