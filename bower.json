@@ -1,0 +1,24 @@
+{
+  "name": "ng-route-ext",
+  "version": "0.0.3",
+  "authors": [
+    "Anton Pleshivtsev <anton@emby.ru>"
+  ],
+  "description": "Extended version of AngularJS ngRoute module that supports namings and different animations between views",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "ngroute",
+    "animations",
+    "css"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ]
+}
