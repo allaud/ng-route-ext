@@ -20,5 +20,8 @@
     "app/components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "latest"
+  }
 }
